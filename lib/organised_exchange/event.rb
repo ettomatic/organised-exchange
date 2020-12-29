@@ -5,7 +5,7 @@ require 'forwardable'
 module OrganisedExchange
   class Event
     extend Forwardable
-    def_delegators :@cal_event, :summary, :dtstart, :dtend, :description
+    def_delegators :@cal_event, :summary, :dtstart, :dtend, :description, :location
 
     attr_accessor :date
 
@@ -18,7 +18,14 @@ module OrganisedExchange
     end
 
     def to_org
-      "* #{summary}\nSCHEDULED: <#{scheduled_at}>\n#{description}\n"
+      "* #{summary}#{zoom_id}\nSCHEDULED: <#{scheduled_at}>\n#{description}"
+    end
+
+    def zoom_id
+      matcher = %r{zoom\.us/j/([0-9]+)}
+      zid     = description.match(matcher) || location.match(matcher)
+
+      " ZOOM_ID: #{zid[1]}" if zid
     end
   end
 end

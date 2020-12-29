@@ -21,18 +21,56 @@ describe OrganisedExchange::Event do
   end
 
   describe '#to_org' do
-    it 'will return the scheduled date and time' do
-      subject.date = Time.new('2021-01-01 Fri 10:30:00')
+    context 'when Zoom link is present in description' do
+      let(:raw_data)  { File.open('spec/fixtures/event_with_zoom_link_in_desc.ics') }
 
-      expected = "* Joe 1:1
-SCHEDULED: <2021-01-01 Fri 10:30-11:00>
+      it 'will return the scheduled date and time' do
+        subject.date = Time.new('2021-01-01 Fri 10:30:00')
+
+        expected = "* Joe 1:1 ZOOM_ID: 123993456\nSCHEDULED: <2021-01-01 Fri 10:30-11:00>
 HI Joe,
 
 To discuss how things are going, what you’re enjoying and not, etc.  We can start with 30 minutes and see whether we need more or less time.
 
 Cheers
-"
-      expect(subject.to_org).to eq expected
+Join Zoom Meeting\n\nhttps://bbc.zoom.us/j/123993456\n\n
+Meeting ID: 123 993 456\n\n\n+44 203 964"
+        expect(subject.to_org).to eq expected
+      end
+    end
+
+    context 'when Zoom link is present in location' do
+      let(:raw_data)  { File.open('spec/fixtures/event_with_zoom_link_in_location.ics') }
+
+      it 'will return the scheduled date and time' do
+        subject.date = Time.new('2021-01-01 Fri 10:30:00')
+
+        expected = "* Joe 1:1 ZOOM_ID: 123993456
+SCHEDULED: <2021-01-01 Fri 10:30-11:00>
+HI Joe,
+
+To discuss how things are going, what you’re enjoying and not, etc.  We can start with 30 minutes and see whether we need more or less time.
+
+Cheers"
+        expect(subject.to_org).to eq expected
+      end
+    end
+
+    context 'when Zoom link is not present' do
+      let(:raw_data)  { File.open('spec/fixtures/event.ics') }
+
+      it 'will return the scheduled date and time' do
+        subject.date = Time.new('2021-01-01 Fri 10:30:00')
+
+        expected = "* Joe 1:1
+SCHEDULED: <2021-01-01 Fri 10:30-11:00>
+HI Joe,
+
+To discuss how things are going, what you’re enjoying and not, etc.  We can start with 30 minutes and see whether we need more or less time.
+
+Cheers"
+        expect(subject.to_org).to eq expected
+      end
     end
   end
 end

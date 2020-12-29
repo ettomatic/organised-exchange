@@ -22,6 +22,9 @@ describe OrganisedExchange::EventsProcessor do
 
     it 'will generate an array of Events sorted by date' do
       events = subject.process(cal_events)
+
+      expect(events.first.date).to be_a(Time)
+
       expect(events.first.scheduled_at).to eq '2020-12-31 Thu 14:00-17:00'
       expect(events.second.scheduled_at).to eq '2021-01-01 Fri 10:30-11:00'
       expect(events.third.scheduled_at).to eq '2021-01-08 Fri 10:30-11:00'
