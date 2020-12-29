@@ -27,7 +27,9 @@ describe OrganisedExchange::Event do
       it 'will return the scheduled date and time' do
         subject.date = Time.new('2021-01-01 Fri 10:30:00')
 
-        expected = "* Joe 1:1 ZOOM_ID: 123993456\nSCHEDULED: <2021-01-01 Fri 10:30-11:00>
+        expected = "* Joe 1:1 ZOOM_ID: 123993456
+SCHEDULED: <2021-01-01 Fri 10:30-11:00>
+LOCATION: 6th Floor
 HI Joe,
 
 To discuss how things are going, what you’re enjoying and not, etc.  We can start with 30 minutes and see whether we need more or less time.
@@ -47,6 +49,7 @@ Meeting ID: 123 993 456\n\n\n+44 203 964"
 
         expected = "* Joe 1:1 ZOOM_ID: 123993456
 SCHEDULED: <2021-01-01 Fri 10:30-11:00>
+LOCATION: Remote Only - Zoom - https://bbc.zoom.us/j/123993456
 HI Joe,
 
 To discuss how things are going, what you’re enjoying and not, etc.  We can start with 30 minutes and see whether we need more or less time.
@@ -64,6 +67,7 @@ Cheers"
 
         expected = "* Joe 1:1
 SCHEDULED: <2021-01-01 Fri 10:30-11:00>
+LOCATION: 6th Floor
 HI Joe,
 
 To discuss how things are going, what you’re enjoying and not, etc.  We can start with 30 minutes and see whether we need more or less time.

@@ -18,12 +18,12 @@ module OrganisedExchange
     end
 
     def to_org
-      "* #{summary}#{zoom_id}\nSCHEDULED: <#{scheduled_at}>\n#{description}"
+      "* #{summary}#{zoom_id}\nSCHEDULED: <#{scheduled_at}>\nLOCATION: #{location}\n#{description}"
     end
 
     def zoom_id
       matcher = %r{zoom\.us/j/([0-9]+)}
-      zid     = description.match(matcher) || location.match(matcher)
+      zid     =  description&.match(matcher) || location&.match(matcher)
 
       " ZOOM_ID: #{zid[1]}" if zid
     end
