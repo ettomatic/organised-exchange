@@ -14,7 +14,7 @@ module OrganisedExchange
           event.date = ev.dtstart
           event
         end
-      end.flatten
+      end.flatten.sort_by {|ev| ev.date }
     end
 
     def self.rules(cal_event)
