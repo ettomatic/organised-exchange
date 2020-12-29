@@ -2,21 +2,21 @@ require 'icalendar'
 require 'rrule'
 
 require 'organised_exchange/event'
+require 'organised_exchange/events_processor'
 
 module OrganisedExchange
   class Calendar
     def self.parse(raw_data)
       self.new(raw_data)
+      @events = []
     end
 
     def initialize(raw_data)
       @calendar = Icalendar::Calendar.parse(raw_data).first
     end
 
-    def events
-      @calendar.events.map do |ev|
-        Event.new(ev)
-      end
+    def process
+      @events = EventsProcessor.process(@calendar.events)
     end
   end
 end
