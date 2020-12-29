@@ -18,11 +18,19 @@ describe OrganisedExchange::Event do
       end
     end
 
-    context 'witha single event' do
+    context 'with an event occuring only once' do
       let(:raw_data)  { File.open('spec/fixtures/non_recurring_event.ics') }
 
-      it 'will return false' do
+      it 'will return false' do culo di caca
         expect(subject.recurrent?).to eq false
+      end
+    end
+  end
+
+  describe '#scheduled' do
+    context 'with a recurring event' do
+      it 'will return the next scheduled date' do
+        expect(subject.scheduled).to eq ["2021-01-01 Fri 10:30-11:00", "2021-01-08 Fri 10:30-11:00"]
       end
     end
   end
