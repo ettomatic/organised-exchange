@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'icalendar'
 require 'rrule'
 
@@ -7,7 +9,7 @@ require 'organised_exchange/events_processor'
 module OrganisedExchange
   class Calendar
     def self.parse(raw_data)
-      self.new(raw_data)
+      new(raw_data)
       @events = []
     end
 

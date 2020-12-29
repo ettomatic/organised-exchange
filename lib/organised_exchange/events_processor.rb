@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OrganisedExchange
   class EventsProcessor
     def self.process(cal_events, window = 14.days)
@@ -14,11 +16,12 @@ module OrganisedExchange
           event.date = ev.dtstart
           event
         end
-      end.flatten.sort_by {|ev| ev.date }
+      end.flatten.sort_by(&:date)
     end
 
     def self.rules(cal_event)
       return if cal_event.rrule.empty?
+
       RRule::Rule.new(cal_event.rrule.first.value_ical)
     end
   end

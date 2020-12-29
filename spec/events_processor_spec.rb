@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe OrganisedExchange::EventsProcessor do
@@ -30,7 +32,7 @@ describe OrganisedExchange::EventsProcessor do
       expect(events.second.scheduled_at).to eq '2021-01-01 Fri 10:30-11:00'
     end
 
-       it 'will handle non recurring events, using the dtstart property as scheduled date' do
+    it 'will handle non recurring events, using the dtstart property as scheduled date' do
       events = subject.process(cal_events)
       expect(events.first.scheduled_at).to eq '2020-12-31 Thu 14:00-17:00'
     end
