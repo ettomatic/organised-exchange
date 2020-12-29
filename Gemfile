@@ -4,4 +4,7 @@ source 'https://rubygems.org'
 
 gem 'icalendar'
 gem 'rrule'
-gem 'rspec'
+group :development, :test do
+  gem 'rspec'
+  gem 'timecop'
+end
