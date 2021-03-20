@@ -1,8 +1,8 @@
 # Organised Exchange
-A script to import Exchange `ics` calendars in Org Agenda
+Import Exchange `ics` calendars in Org Agenda.
 
 ## Rationale
-In the last year my days have been bombarded of meetings. I wanted to keep track of them on my Org Agenda without the complexities of setting up an account using Davmail or similar solution.
+In the last year my days have been bombarded with meetings. I wanted to keep track of them on my Org Agenda without the complexities of setting up an account using Davmail or similar solutions.
 
 My check-list was:
 - [x] Simple to setup
@@ -57,6 +57,7 @@ Ruby 2.x
 - [ ] Sync directly from Emacs
 - [ ] A Docker image
 - [ ] Make the Zoom link optional
+- [ ] If there's interest make it more configurable
 
 
 ## Contributing
