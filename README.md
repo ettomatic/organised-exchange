@@ -32,6 +32,18 @@ Then you can simply run:
 $ bin/exchange_to_org
 ```
 
+Or use an Emacs function like
+
+```emacs
+(defun organised-exchange ()
+  "Sync Outlook Calendar ics with Org Agenda"
+  (interactive)
+  (if (get-buffer "exchange.org")
+      (kill-buffer "exchange.org"))
+  (shell-command "~/code/organised-exchange/bin/exchange_to_org")
+  (message "calendar imported!"))
+```
+
 
 ## Publishing your Exchange Calendar
 
@@ -60,7 +72,7 @@ Ruby 2.x
 
 ## TODO
 
-- [ ] Sync directly from Emacs
+- [ ] Improve Sync from Emacs
 - [ ] A Docker image
 - [ ] Make the Zoom link optional
 - [ ] If there's interest make it more configurable
