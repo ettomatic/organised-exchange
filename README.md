@@ -42,7 +42,7 @@ In Order to have an up to date ics calendar from your Office 365 account you can
 4. Select **Shared calendars**
 5. Select and publish your calendar
 
-This produces a link to your ics file, **be careful!** your calendar is now just protected by obfuscation, please consider if this is acceptable for your use case.
+:warning: This produces a link to your ics file, **be careful!** your calendar is now just [protected by obfuscation](https://support.microsoft.com/en-us/office/introduction-to-publishing-internet-calendars-a25e68d6-695a-41c6-a701-103d44ba151d), please consider if this is acceptable for your use case.
 
 We are almost there! Just curl the ics file and import it in Emacs:
 ```
