@@ -21,6 +21,11 @@ ORGANISED_EXCHANGE_ORIGIN=/location/for/your/calendar.ics
 ORGANISED_EXCHANGE_DESTINATION=/target/org/file/exchange.org
 ```
 
+Setup the Ruby dependencies
+```
+$ bundle install 
+```
+
 Then you can simply run:
 
 ```
@@ -37,7 +42,7 @@ In Order to have an up to date ics calendar from your Office 365 account you can
 4. Select **Shared calendars**
 5. Select and publish your calendar
 
-This produces a link to your ics file, be careful! your calendar is now just protected by obfuscation, please consider if this is acceptable for your use case.
+This produces a link to your ics file, **be careful!** your calendar is now just protected by obfuscation, please consider if this is acceptable for your use case.
 
 We are almost there! Just curl the ics file and import it in Emacs:
 ```
