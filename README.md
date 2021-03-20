@@ -32,7 +32,7 @@ Then you can simply run:
 $ bin/exchange_to_org
 ```
 
-Or use an Emacs function like
+Or use an Emacs function like:
 
 ```emacs
 (defun organised-exchange ()
@@ -73,6 +73,7 @@ Ruby 2.x
 ## TODO
 
 - [ ] Improve Sync from Emacs
+- [ ] Timezones!
 - [ ] A Docker image
 - [ ] Make the Zoom link optional
 - [ ] If there's interest make it more configurable
