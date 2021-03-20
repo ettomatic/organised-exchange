@@ -1,5 +1,5 @@
 # Organised Exchange
-A script to import Exchange ics calendars in Org Agenda
+A script to import Exchange `ics` calendars in Org Agenda
 
 ## Rationale
 In the last year my days have been bombarded of meetings. I wanted to keep track of them on my Org Agenda without the complexities of setting up an account using Davmail or similar solution.
@@ -30,7 +30,7 @@ $ bin/exchange_to_org
 ## Publishing your Exchange Calendar
 
 In Order to have an up to date ics calendar from your Office 365 account you can:
-1. Go to Outlook Settings
+1. Go to **Outlook Settings**
 2. View all Outlook settings
 3. the select **Calendar** on the left hand side
 4. Select **Shared calendars**
@@ -38,7 +38,7 @@ In Order to have an up to date ics calendar from your Office 365 account you can
 
 This produces a link to your ics file, be careful! your calendar is now just protected by obfuscation, please consider if this is acceptable for your use case.
 
-Your are almost there! just curl the ics file and import it in Emacs:
+We are almost there! Just curl the ics file and import it in Emacs:
 ```
 $ curl https://outlook.office365.com/owa/calendar/[....]/calendar.ics > $ORGANISED_EXCHANGE_ORIGIN
 $ bin/exchange_to_org 
