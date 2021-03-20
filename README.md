@@ -44,7 +44,7 @@ $ curl https://outlook.office365.com/owa/calendar/[....]/calendar.ics > $ORGANIS
 $ bin/exchange_to_org
 ```
 
-Make sure your `org-agenda-files` includes the file you set for `$ORGANISED_EXCHANGE_DESTINATION` and Voila! Your Org Agenda will now show your Exhange meetings!
+Make sure your `org-agenda-files` includes the file you set for `$ORGANISED_EXCHANGE_DESTINATION` and Voila! Your Org Agenda will now show your Exchange meetings!
 
 ![Screenshot](img/org-agenda.png)
 
