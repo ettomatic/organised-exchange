@@ -4,9 +4,9 @@ A script to import Exchange `ics` calendars in Org Agenda
 ## Rationale
 In the last year my days have been bombarded of meetings. I wanted to keep track of them on my Org Agenda without the complexities of setting up an account using Davmail or similar solution.
 
-My check list was:
+My check-list was:
 - [x] Simple to setup
-- [x] Meetings shoudl nicely mix up with my normal schedules in Org Agenda
+- [x] Meetings should nicely mix up with my normal schedules in Org Agenda
 - [x] Read only, I can put a meeting in the calendar directly on Outlook
 - [x] Show the Zoom link 
 
@@ -44,6 +44,9 @@ $ curl https://outlook.office365.com/owa/calendar/[....]/calendar.ics > $ORGANIS
 $ bin/exchange_to_org 
 ```
 
+Make sure your `org-agenda-files` includes the file you set for `$ORGANISED_EXCHANGE_DESTINATION` and Voila! Your Org Agenda will now show your Exhange meetings!  
+
+
 ## Requirements
 
 Ruby 2.x
@@ -51,7 +54,7 @@ Ruby 2.x
 ## TODO
 
 - [ ] Sync directly from Emacs
-- [ ] a Docker image
+- [ ] A Docker image
 - [ ] Make the Zoom link optional
 
 
