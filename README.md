@@ -8,7 +8,7 @@ My check-list was:
 - [x] Simple to setup
 - [x] Meetings should nicely mix up with my normal schedules in Org Agenda
 - [x] Read only, I can put a meeting in the calendar directly on Outlook
-- [x] Show the Zoom link 
+- [x] Show the Zoom link
 
 ## Usage
 
@@ -41,11 +41,12 @@ This produces a link to your ics file, be careful! your calendar is now just pro
 We are almost there! Just curl the ics file and import it in Emacs:
 ```
 $ curl https://outlook.office365.com/owa/calendar/[....]/calendar.ics > $ORGANISED_EXCHANGE_ORIGIN
-$ bin/exchange_to_org 
+$ bin/exchange_to_org
 ```
 
-Make sure your `org-agenda-files` includes the file you set for `$ORGANISED_EXCHANGE_DESTINATION` and Voila! Your Org Agenda will now show your Exhange meetings!  
+Make sure your `org-agenda-files` includes the file you set for `$ORGANISED_EXCHANGE_DESTINATION` and Voila! Your Org Agenda will now show your Exhange meetings!
 
+![Screenshot](img/org-agenda.png)
 
 ## Requirements
 
