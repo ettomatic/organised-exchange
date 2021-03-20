@@ -1,4 +1,6 @@
-require_relative './lib/organised_exchange'
+#!/usr/bin/env ruby
+
+require_relative '../lib/organised_exchange'
 
 origin      = ENV['ORGANISED_EXCHANGE_ORIGIN']
 destination = ENV['ORGANISED_EXCHANGE_DESTINATION']
