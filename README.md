@@ -9,6 +9,7 @@ My check-list was:
 - [x] Meetings should nicely mix up with my normal schedules in Org Agenda
 - [x] Read only, I can put a meeting in the calendar directly on Outlook
 - [x] Show the Zoom link
+- [x] Sync it manually or via cron
 
 ## Usage
 
