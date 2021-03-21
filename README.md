@@ -50,6 +50,8 @@ Or use an Emacs function like:
   (message "calendar imported!"))
 ```
 
+Make sure your `org-agenda-files` includes the file you set for `$ORGANISED_EXCHANGE_DESTINATION` and Voila! Your Org Agenda will now show your Exchange meetings!
+
 ![Screenshot](img/org-agenda.png)
 
 ## Publishing your Exchange Calendar
@@ -66,10 +68,9 @@ In Order to have an up to date ics calendar from your Office 365 account you can
 We are almost there! Just curl the ics file and import it in Emacs:
 ```
 $ curl https://outlook.office365.com/owa/calendar/[....]/calendar.ics > $ORGANISED_EXCHANGE_ORIGIN
-$ bin/exchange_to_org
 ```
 
-Make sure your `org-agenda-files` includes the file you set for `$ORGANISED_EXCHANGE_DESTINATION` and Voila! Your Org Agenda will now show your Exchange meetings!
+You can add this to a cron job if you like. 
 
 ## Requirements
 
@@ -79,7 +80,7 @@ Ruby 2.x
 
 - [ ] Improve Sync from Emacs
 - [ ] Timezones!
-- [ ] A Docker image
+- [x] A Docker image
 - [ ] Make the Zoom link optional
 - [ ] If there's interest make it more configurable
 
