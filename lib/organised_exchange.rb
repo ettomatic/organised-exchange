@@ -21,10 +21,18 @@ module OrganisedExchange
     end
 
     def to_org(destination)
-      File.open(destination, "w+") do |f|
-        f.puts "#+STARTUP: overview\n\n"
-        @events.each { |ev| f.puts(ev.to_org) }
+      if destination == STDOUT
+        print(STDOUT)
+      else
+        File.open(destination, "w+") do |f|
+          print(f)
+        end
       end
+    end
+
+    def print(target)
+      target.puts "#+STARTUP: overview\n\n"
+      @events.each { |ev| target.puts(ev.to_org) }
     end
   end
 end

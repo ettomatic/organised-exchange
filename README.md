@@ -15,32 +15,38 @@ My check-list was:
 
 Set envs vars:
 
-```
+```shell
 $ env | grep ORGANISED_EXCHANGE
 ORGANISED_EXCHANGE_ORIGIN=/location/for/your/calendar.ics
 ORGANISED_EXCHANGE_DESTINATION=/target/org/file/exchange.org
 ```
 
 Setup the Ruby dependencies
-```
-$ bundle install 
+```shell
+$ bundle install
 ```
 
 Then you can simply run:
 
 ```
-$ bin/exchange_to_org
+$ ruby bin/etoxchange_to_org
+```
+
+If you prefer you can use Docker
+```shell
+$ docker pull ettomatic/organised-exchange:latest
+$ bin/eto
 ```
 
 Or use an Emacs function like:
 
 ```emacs
 (defun organised-exchange ()
-  "Sync Outlook Calendar ics with Org Agenda"
+  "Sync Outlook Calendar ics with Org Agenda."
   (interactive)
   (if (get-buffer "exchange.org")
       (kill-buffer "exchange.org"))
-  (shell-command "~/code/organised-exchange/bin/exchange_to_org")
+  (shell-command "~/code/organised-exchange/bin/eto")
   (message "calendar imported!"))
 ```
 
