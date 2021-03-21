@@ -7,4 +7,4 @@ ENV ORGANISED_EXCHANGE_ORIGIN="/calendar.ics"
 COPY . .
 RUN bundle install
 
-ENTRYPOINT ["./bin/exchange_to_org"]
+ENTRYPOINT ["ruby", "./bin/exchange_to_org.rb"]
