@@ -10,8 +10,9 @@ My check-list was:
 - [x] Read only, I can put a meeting in the calendar directly on Outlook
 - [x] Show the Zoom link
 - [x] Sync it manually or via cron
+- [x] Running from Docker to ease dependencies
 
-## Usage
+## Setup
 
 Set envs vars:
 
@@ -21,25 +22,26 @@ ORGANISED_EXCHANGE_ORIGIN=/location/for/your/calendar.ics
 ORGANISED_EXCHANGE_DESTINATION=/target/org/file/exchange.org
 ```
 
-Setup the Ruby dependencies
-```shell
-$ bundle install
-```
+### with Docker
 
-Then you can simply run:
-
-```
-$ ruby bin/etoxchange_to_org
-```
-
-If you prefer you can use Docker
 ```shell
 $ docker pull ettomatic/organised-exchange:latest
 $ bin/eto
 ```
+### with Ruby
 
-Or use an Emacs function like:
+Setup the Ruby dependencies
+```shell
+$ bundle install
+```
+Then you can simply run:
+```
+$ ruby bin/exchange_to_org.rb
+```
 
+## Usage
+
+You can sync from Emacs using a function like:
 ```emacs
 (defun organised-exchange ()
   "Sync Outlook Calendar ics with Org Agenda."
@@ -80,7 +82,6 @@ Ruby 2.x
 
 - [ ] Improve Sync from Emacs
 - [ ] Timezones!
-- [x] A Docker image
 - [ ] Make the Zoom link optional
 - [ ] If there's interest make it more configurable
 
