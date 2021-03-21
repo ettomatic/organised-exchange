@@ -76,7 +76,7 @@ You can add this to a cron job if you like.
 
 ## Requirements
 
-Ruby 2.x
+Dokcer or Ruby 2.x
 
 ## TODO
 
