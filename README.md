@@ -50,6 +50,7 @@ Or use an Emacs function like:
   (message "calendar imported!"))
 ```
 
+![Screenshot](img/org-agenda.png)
 
 ## Publishing your Exchange Calendar
 
@@ -69,8 +70,6 @@ $ bin/exchange_to_org
 ```
 
 Make sure your `org-agenda-files` includes the file you set for `$ORGANISED_EXCHANGE_DESTINATION` and Voila! Your Org Agenda will now show your Exchange meetings!
-
-![Screenshot](img/org-agenda.png)
 
 ## Requirements
 
