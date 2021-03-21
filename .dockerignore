@@ -1,5 +1,8 @@
 .git
 .gitignore
 Dockerfile
+.dockerignore
+bin/eto
 img
 README.md
+spec
