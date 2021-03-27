@@ -85,6 +85,15 @@ Docker or Ruby 2.x
 - [ ] Make the Zoom link optional
 - [ ] If there's interest make it more configurable
 
+## Limitations & Alternatives
+
+organised-exchange is pretty simple and has been built as a read-only solution to simplify connecting whith complex authentication setups. If you are not limited by this, you'd find [Excorporate](https://github.com/emacsmirror/excorporate) a much more powerful solution. 
+
+organised-exchange also requires having Docker or Ruby on your machine, which could definitely be a limitation for you. 
+
+Another option to consider is using [ical2org.awk](https://orgmode.org/worg/org-tutorials/org-google-sync.html) to process you ics files as org files. 
+
+Finally, if you are a Gmail user, you'd also consider syncing your Outlook calendar with Google calendar and then using one of the Google calendar sync tools for Emacs. 
 
 ## Contributing
 
